@@ -8,19 +8,19 @@
     "description": ""
   },
   "options": {
-    "draftAndPublish": true
+    "draftAndPublish": false
   },
   "pluginOptions": {},
   "attributes": {
     "model": {
       "type": "enumeration",
       "enum": [
-        "Golf",
-        "Jetta",
-        "Passat",
-        "Polo",
-        "Beetle",
-        "T-Roc"
+        "Golf 1.5 TSI",
+        "Passat 2.0 TDI",
+        "Polo 1.0 MPI",
+        "Tiguan 2.0 TSI",
+        "Jetta 1.4 TSI",
+        "Arteon 2.0 TDI"
       ]
     },
     "year": {
@@ -30,7 +30,49 @@
       "type": "integer"
     },
     "customerId": {
+      "type": "biginteger"
+    },
+    "phoneNumber": {
       "type": "string"
+    },
+    "email": {
+      "type": "email"
+    },
+    "serialNumber": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "licensePlate": {
+      "type": "string",
+      "unique": true,
+      "required": true
+    },
+    "mileage": {
+      "type": "biginteger"
+    },
+    "nextMaintenanceVisit": {
+      "type": "date"
+    },
+    "lastMaintenanceVisit": {
+      "type": "date"
+    },
+    "numberOfMonthsBetweenMaintenanceVisits": {
+      "type": "integer"
+    },
+    "issues": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::issue.issue",
+      "mappedBy": "car"
+    },
+    "picture": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
     }
   }
 }
