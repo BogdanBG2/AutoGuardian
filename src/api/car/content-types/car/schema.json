@@ -29,9 +29,6 @@
     "numberOfIssues": {
       "type": "integer"
     },
-    "customerId": {
-      "type": "biginteger"
-    },
     "phoneNumber": {
       "type": "string"
     },
